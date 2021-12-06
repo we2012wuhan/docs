@@ -1,0 +1,166 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>在水一方</title>
+
+<!--  https://auditprogram.oss-cn-beijing.aliyuncs.com/2021/11月/b2.png?versionId=CAEQIhiBgMCM8JDd6BciIDc3NGMxMDZjYTc0YjRhYjJiMTFjODZiYTQwNjEzNTI2-->
+  <link rel="icon" href="https://auditprogram.oss-cn-beijing.aliyuncs.com/2021/11月/b2.png?versionId=CAEQIhiBgMCM8JDd6BciIDc3NGMxMDZjYTc0YjRhYjJiMTFjODZiYTQwNjEzNTI2">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1" />
+  <meta name="description" content="Description">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, minimum-scale=1.0">
+  <link rel="stylesheet" href="//cdn.jsdelivr.net/npm/docsify@4/lib/themes/vue.css">
+  <link rel="stylesheet" href="https://wugenqiang.js.org/src/css/iconfont.css">
+<!--  sidebar树可折叠引入的插件-->
+  <link rel="stylesheet" href="//cdn.jsdelivr.net/npm/docsify-sidebar-collapse/dist/sidebar.min.css" />
+  <link rel="stylesheet" href="//cdn.jsdelivr.net/npm/docsify-sidebar-collapse/dist/sidebar-folder.min.css" />
+<!--  引入mermaid-->
+  <link rel="stylesheet" href="//cdn.jsdelivr.net/npm/mermaid/dist/mermaid.min.css">
+  <script src="//cdn.jsdelivr.net/npm/mermaid/dist/mermaid.min.js"></script>
+
+
+
+
+</head>
+<body>
+  <div id="app">
+
+
+
+  </div>
+
+  <script>
+    var num = 0;
+    mermaid.initialize({ startOnLoad: false });
+    window.$docsify = {
+      logo: 'image/sidelogo.svg',
+      name: '',
+      repo: '',
+      loadSidebar: true,
+      loadNavbar: true,
+      coverpage: true,
+      onlyCover: true,
+      subMaxLevel: 2,
+      executeScript: true,
+      auto2top: true,
+      // search : [
+      //   '/README.md',            // => /README.md
+      // ],
+      // // 完整配置参数
+      search: {
+        maxAge: 86400000, // 过期时间，单位毫秒，默认一天
+        paths: 'auto', // or 'auto'
+        placeholder: '🔍 搜索',
+        // 搜索标题的最大层级, 1 - 6
+        depth: 5,
+        // 支持本地化
+        noData: '😒 找不到结果',
+
+
+      },
+      disqus: 'shortname',
+      externalLinkTarget: '_blank', //外链打开方式：_blank表示在新标签页中打开
+      sidebarDisplayLevel: 1,
+
+      // plugins: [
+      //   function(hook) {
+      //     var footer = [
+      //       '<hr/>',
+      //       '<footer>',
+      //       // '<span><a href="https://github.com/QingWei-Li">cinwell</a> &copy;</span>',
+      //       '<span>@2021在水一方</span>',
+      //       '</footer>'
+      //     ].join('');
+      //
+      //     hook.afterEach(function(html) {
+      //       return html + footer;
+      //     });
+      //   }
+      // ],
+      count:{
+        countable:true,
+        fontsize:'0.9em',
+        color:'rgb(90,90,90)',
+        language:'chinese',
+        localization: {
+          words: "",
+          minute: ""
+        },
+        isExpected: true
+
+      },
+
+      mergeNavbar: true,//Navbar将在小屏幕上与侧边栏合并
+      markdown: {
+        renderer: {
+          code: function(code, lang) {
+            // 判断语言是否为 mermaid
+            if (lang === "mermaid") {
+              // 将div 返回
+              return (
+                      '<div class="mermaid">' + mermaid.render('mermaid-svg-' + num++, code) + "</div>"
+              );
+            }
+            return this.origin.code.apply(this, arguments);
+          }
+        }
+      },
+      notFoundPage: '404.md',
+      // topMargin: 30,//adjust top
+
+
+    }
+  </script>
+  <!-- Docsify v4 -->
+  <script src="//cdn.jsdelivr.net/npm/docsify@4"></script>
+  <script src="//cdn.jsdelivr.net/npm/docsify/lib/plugins/search.min.js"></script>
+  <script src="//cdn.jsdelivr.net/npm/docsify/lib/plugins/emoji.min.js"></script>
+  <script src="//cdn.jsdelivr.net/npm/docsify/lib/plugins/disqus.min.js"></script>
+<!--   代码高亮-->
+  <script src="//cdn.jsdelivr.net/npm/prismjs@1/components/prism-bash.min.js"></script>
+  <script src="//cdn.jsdelivr.net/npm/prismjs@1/components/prism-php.min.js"></script>
+
+<!--  sidebar结构树可折叠的js引入-->
+  <script src="//cdn.jsdelivr.net/npm/docsify-sidebar-collapse/dist/docsify-sidebar-collapse.min.js"></script>
+
+
+  <script src="https://cdn.jsdelivr.net/gh/wugenqiang/NoteBook@master/plugin/jquery.js"></script>
+  <script src="https://cdn.jsdelivr.net/gh/wugenqiang/NoteBook@master/plugin/jquery.goup.js"></script>
+
+<!--  谷歌统计-->
+  <script src="//cdn.jsdelivr.net/npm/docsify/lib/plugins/ga.min.js"></script>
+
+  <!--  字数统计-->
+  <script src="//unpkg.com/docsify-count/dist/countable.js"></script>
+
+<!--  复制到剪贴板-->
+  <script src="//cdn.jsdelivr.net/npm/docsify-copy-code/dist/docsify-copy-code.min.js"></script>
+<!--引入emoji-->
+  <script src="//cdn.jsdelivr.net/npm/docsify/lib/plugins/emoji.min.js"></script>
+
+<!--图片缩放-->
+  <script src="//cdn.jsdelivr.net/npm/docsify/lib/plugins/zoom-image.min.js"></script>
+
+
+
+  <script type="text/javascript">
+    $(document).ready(function () {
+      $.goup({
+        trigger: 100,
+        bottomOffset: 52,
+        locationOffset: 25,
+        //title: 'TOP',
+        titleAsText: true
+      });
+    });
+  </script>
+
+  <script>
+    if (typeof navigator.serviceWorker !== 'undefined') {
+      navigator.serviceWorker.register('sw.js')
+    }
+  </script>
+</body>
+
+
+</html>
